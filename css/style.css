@@ -1,0 +1,143 @@
+/* Basic Styles */
+
+body {
+  color: black;
+  font-family: 'Roboto','sans-serif';
+}
+
+header {
+  background: black;
+  color: white;
+}
+
+main {
+  background: #7e7e7e;
+  padding-top: 20px;
+}
+
+footer {
+  background: black;
+  color: white;
+  min-height: 50px;
+}
+
+a {
+  color: #d49000;
+}
+
+h1 {
+  font-size: 60px;
+  font-weight: 900;
+}
+
+h2 {
+  font-size: 48px;
+  font-weight: 900;
+}
+
+h3 {
+  font-size: 30px;
+  font-weight: 400;
+}
+
+h4 {
+  font-size: 24px;
+  font-weight: 300;
+}
+
+hr.break {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+  border: none;
+  border-top: 10px solid #d49000;
+  color: #d0c4ab;
+  text-align: center;
+}
+
+/* Classes */
+
+.remove-top {
+  padding-top: 0 !important;
+  margin: 0 !important;
+}
+
+.remove-bottom {
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.title-img {
+  padding-bottom: 10px;
+  padding-top: 20px;   
+}
+
+.project {
+  padding: 20px;
+  margin-bottom: 20px;
+  background: rgb(255, 255, 255);
+  border-radius: 10px;
+}
+
+.project-title {
+  font-size: 40px;
+  font-weight: 400;
+}
+
+.project-img {
+  border: 3px solid black;
+  border-radius: 10px;
+}
+
+/* Modal Styles */
+
+.modal-header {
+  background: black;
+  border-bottom: 5px solid #d49000;
+  color: white;
+}
+
+.modal-title {
+  font-size: 40px;
+  font-weight: 900;
+}
+
+.modal-footer {
+  background: black;
+  border-top: 5px solid #d49000;
+}
+
+/* Resize and center headers on smaller screens */
+
+@media (max-width: 480px) {
+  h1,
+  h2,
+  .project-title {
+    font-size: 32px;
+  }
+  h3,
+  h4,
+  h5 {
+    font-size: 16px;
+  }
+  .title-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 980px) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    text-align: center;
+  }
+  .title-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
