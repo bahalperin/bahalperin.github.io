@@ -38,7 +38,7 @@ module.exports = function (grunt) {
     },
     autoprefixer: {
       options: {
-        browsers: ['last 2 versions', '> 1%']
+        browsers: ['last 3 versions', '> 1%']
       },
       no_dest: {
         src: 'build/style.min.css'
@@ -67,6 +67,6 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
 
   // Register default tasks
-  grunt.registerTask('default', ['newer:uglify:js', 'newer:concat:js', 'newer:cssmin',
-                                 'newer:autoprefixer', 'newer:concat:css', 'clean' ]);
+  grunt.registerTask('default', ['newer:uglify:js', 'newer:concat:js',
+                                 'newer:cssmin', 'newer:concat:css', 'clean' ]);
 }

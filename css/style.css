@@ -78,7 +78,8 @@ hr.faded {
   height: 1px;
   margin: 0;
   padding: 0;
-  border: none; 
+  border: none;
+  background: transparent;
   background-image: -webkit-gradient(
     linear,
     left bottom,
@@ -88,6 +89,9 @@ hr.faded {
     color-stop(0.8, black),
     color-stop(1, transparent)
   );
+}
+
+hr.faded-moz {
   background-image: -moz-linear-gradient(
     left center,
     transparent 0%,
