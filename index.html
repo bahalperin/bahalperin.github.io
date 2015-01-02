@@ -5,199 +5,120 @@
   <meta charset="utf-8">
   <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>My Portfolio!</title>
-  <link href="//fonts.googleapis.com/css?family=Roboto:400,900,300,100,500" rel="stylesheet">
-  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <title>Portfolio | Ben Halperin</title>
+
+  <link href='http://fonts.googleapis.com/css?family=Raleway:400,200,700|Libre+Baskerville:400,400italic,700' rel='stylesheet' type='text/css'>
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<!--
+  <link rel="stylesheet" href="css/bootstrap.css" />
   <link rel="stylesheet" href="css/style.css" />
-  <script src="js/jquery.js"></script>
-  <script src="js/bootstrap.min.js"></script>
+-->
+  <link rel="stylesheet" href="build/combined.min.css">
+
 </head>
 
 <body>
-  <header class="container">
+  <header class="container add-bottom">
     <div class="row">
-      <div class="col-md-6">
-        <img class="img-responsive title-img" src="images/profile_pic.jpg" alt="Header Image">
+      <div data-bind="css: colName">
+        <img class="img-responsive img-circle title-img" src="images/profile_pic.jpg" alt="Header Image">
       </div>
       <div class="col-md-6 text-right text-uppercase">
         <h1 class="remove-bottom">Ben Halperin</h1>
         <h4 class="remove-top">Web Developer</h4>
       </div>
     </div>
-    <div class="row">
-      <hr class="break">
-    </div>
   </header>
-  <main class="container">
-    <div class="row">
-      <img class="img-responsive center-block" src="images/banner.png" alt="Portfolio Banner Image">
-    </div>
-    <div class="row">
-      <div class="col-md-12 text-center">
-        <h2 class="content-title">Featured Work</h2>
-      </div>
-    </div>
-    <div class="row text-center">
-      <div class="col-md-4">
-        <div class="project">
-          <img class="project-img img-responsive center-block" src="images/duct-sizer.png" alt="Project Image" data-toggle="modal" data-target="#project1">
-          <h3 class="project-title text-uppercase remove-top">Duct Sizer</h3>
-          <p><a href="//github.com/bahalps/duct-sizer">http://github.com/bahalps/duct-sizer</a>
-          </p>
+
+  <main>
+    <!-- About Me Section -->
+    <section class="gray add-bottom">
+      <div class="container">
+        <h2 class="content-title text-center">About Me</h2>
+        <hr class="faded">
+        <div class="about-me">
+        <p>
+          Proident noster do ullamco <strong>domesticarum</strong>. Singulis multos veniam possumus lorem, malis <strong>commodo</strong> domesticarum, fore sempiternum pariatur quis occaecat, ubi fugiat enim ita quibusdam, ut esse aute est aliquip, noster consequat do occaecat ubi est nescius si <strong>incididunt</strong>, cernantur summis anim ne summis. Nostrud cohaerescant sed ingeniis. Cupidatat fore senserit, nescius domesticarum ad commodo. Fabulas varias expetendis, non id minim <strong>possumus</strong>. Lorem ut possumus, mandaremus qui veniam expetendis, arbitror irure sunt ita culpa aut o legam arbitrantur si appellat <strong>relinqueret</strong> de officia se illum aliquip ad tractavissent, si doctrina imitarentur, aut nulla irure duis possumus. Ingeniis sed lorem arbitror o tempor dolore cupidatat, probant quis ea officia <strong>voluptatibus</strong> in ingeniis amet admodum iudicem. Ita ita <strong>reprehenderit</strong> do fabulas iis summis incurreret et voluptate ab varias o labore o si nisi offendit.
+        </p>
+        </div>
+        <hr class="faded">
+        <div class="text-center">
+          <a href="#projects">
+            <button class="add-top">View My Projects</button>
+          </a>
+          <br class="small-screen">
+          <a target="_blank" href="//bahalps.github.io/frontend-nanodegree-resume/">
+            <button class="add-top">View My Resume</button>
+          </a>
+          <br class="small-screen">
+          <a href="#contacts">
+            <button class="add-top">Get in Touch!</button>
+          </a>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="project">
-          <img class="project-img img-responsive center-block" src="images/resume.png" alt="Project Image" data-toggle="modal" data-target="#project2">
-          <h3 class="project-title text-uppercase remove-top">Appify</h3>
-          <p><a href="//github.com/">Link to project</a>
-          </p>
+    </section>
+    <div class="arrow-down"></div>
+
+    <!-- Project Gallery -->
+    <section id="projects" class="container" data-bind="foreach: projectsInRows">
+      <div class="row add-bottom text-center">
+        <div data-bind="foreach: {data: content, as: 'project'}">
+          <div data-bind="css: colName">
+            <h3 class="project-title" data-bind="text: name"></h3>
+            <div class="project">
+              <img class="project-img img-responsive center-block" alt="Project Image" data-toggle="modal" data-target="#project1" data-bind="attr: {src: project.image, 'data-target': project.idWithHash}, click: goToProject.bind(project)">
+            </div>
+          </div>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="project">
-          <img class="project-img img-responsive center-block" src="images/arcade_game.png" alt="Project Image" data-toggle="modal" data-target="#project3">
-          <h3 class="project-title text-uppercase remove-top">Appify</h3>
-          <p><a href="//github.com/">Link to project</a>
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="row text-center">
-      <div class="col-md-4">
-        <div class="project">
-          <img class="project-img img-responsive center-block" src="images/neighborhood.png" alt="Project Image" data-toggle="modal" data-target="#project4">
-          <h3 class="project-title text-uppercase remove-top">Duct Sizer</h3>
-          <p><a href="//github.com/bahalps/duct-sizer">http://github.com/bahalps/duct-sizer</a>
-          </p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="project">
-          <img class="project-img img-responsive center-block" src="images/resume.png" alt="Project Image" data-toggle="modal" data-target="#project5">
-          <h3 class="project-title text-uppercase remove-top">Appify</h3>
-          <p><a href="//github.com/">Link to project</a>
-          </p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="project">
-          <img class="project-img img-responsive center-block" src="images/arcade_game.png" alt="Project Image" data-toggle="modal" data-target="#project6">
-          <h3 class="project-title text-uppercase remove-top">Appify</h3>
-          <p><a href="//github.com/">Link to project</a>
-          </p>
-        </div>
-      </div>
-    </div>
+    </section>
   </main>
-  <footer class="container">
-    <div class="row">
-      <hr class="break">
-    </div>
-    <div class="row">
-      <div class="col-md-12">
-        <h3>About Me:</h3>
-        Stuff about me will go here eventually!
+  <footer class="gray">
+    <div class="container">
+      <div class="row">
+        <h3 class="text-center text-thin">Contact Me</h3>
+        <hr class="faded">
+      </div>
+      <div id="contacts" class="add-top text-center">
+        <a href="//github.com/bahalps" target="_blank"><i class="fa fa-github fa-3x"></i></a>
+        <a href="//linkedin.com/in/bahalperin" target="_blank"><i class="fa fa-linkedin-square fa-3x"></i></a>
+        <a href="mailto:bahalperin@gmail.com"><i class="fa fa-envelope fa-3x"></i></a>
       </div>
     </div>
   </footer>
 
   <!-- Modal -->
-  <div class="modal fade" id="project1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h2 class="modal-title text-center text-uppercase" id="myModalLabel1">Duct Sizer</h2>
-        </div>
-        <div class="modal-body">
-          <img class="img-responsive project-img" src="images/duct-sizer.png" alt="Project Image">This is the first web application I made outside of a class!
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="modal fade" id="project2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h2 class="modal-title text-center text-uppercase" id="myModalLabel2">Favorite App Page</h2>
-        </div>
-        <div class="modal-body">
-          <img class="img-responsive project-img" src="images/resume.png" alt="Project Image">Placeholder
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+  <div data-bind="with: chosenProject">
+    <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-bind="attr: {id: chosenProject().id}">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title text-center text-uppercase" id="myModalLabel" data-bind="text: name"></h3>
+            <i class="fa fa-close fa-2x" data-dismiss="modal"></i>
+          </div>
+          <div class="modal-body text-center">
+            <img class="img-responsive modal-img" alt="Project Image" data-bind="attr: {src: image}">
+            <a target="_blank" data-bind="attr: {href: url}">
+              <button>View Project</button>
+            </a>
+            <a target="_blank" data-bind="attr: {href: github}">
+              <button>View GitHub</button>
+            </a>
+          </div>
+          <div class="modal-footer">
+            <p class="project-description" data-bind="text: description"></p>
+          </div>
         </div>
       </div>
     </div>
   </div>
-
-  <div class="modal fade" id="project3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel3" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h2 class="modal-title text-center text-uppercase" id="myModalLabel3">Favorite App Page</h2>
-        </div>
-        <div class="modal-body">
-          <img class="img-responsive project-img" src="images/arcade_game.png" alt="Project Image">Placeholder
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="modal fade" id="project4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel3" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h2 class="modal-title text-center text-uppercase" id="myModalLabel4">Favorite App Page</h2>
-        </div>
-        <div class="modal-body">
-          <img class="img-responsive project-img" src="images/neighborhood.png" alt="Project Image">Placeholder
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="modal fade" id="project5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel3" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h2 class="modal-title text-center text-uppercase" id="myModalLabel5">Favorite App Page</h2>
-        </div>
-        <div class="modal-body">
-          <img class="img-responsive project-img" src="images/arcade_game.png" alt="Project Image">Placeholder
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="modal fade" id="project6" tabindex="-1" role="dialog" aria-labelledby="myModalLabel3" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h2 class="modal-title text-center text-uppercase" id="myModalLabel6">Favorite App Page</h2>
-        </div>
-        <div class="modal-body">
-          <img class="img-responsive project-img" src="images/arcade_game.png" alt="Project Image">Placeholder
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
+  <!--
+  <script src="js/jquery.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="js/knockout.min.js"></script>
+  <script src="js/app.js"></script>
+-->
+  <script src="build/combined.min.js"></script>
 </body>
 
 </html>
