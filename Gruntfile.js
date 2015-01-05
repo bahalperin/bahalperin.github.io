@@ -10,29 +10,29 @@ module.exports = function (grunt) {
     pkg: grunt.file.readJSON('package.json'),
     concat: {
       js: {
-        src: ['build/jquery.min.js', 'build/bootstrap.min.js', 'build/knockout.min.js', 'build/app.min.js'],
+        src: ['temp/jquery.min.js', 'temp/bootstrap.min.js', 'temp/knockout.min.js', 'temp/app.min.js'],
         dest: 'build/combined.min.js'
       },
       css: {
-        src: ['build/bootstrap.min.css', 'build/style.min.css'],
+        src: ['temp/bootstrap.min.css', 'temp/style.min.css'],
         dest: 'build/combined.min.css'
       }
     },
     cssmin: {
       css: {
         files: {
-          'build/style.min.css': ['css/style.css'],
-          'build/bootstrap.min.css': ['css/bootstrap.css']
+          'temp/style.min.css': ['css/style.css'],
+          'temp/bootstrap.min.css': ['css/bootstrap.css']
         }
       }
     },
     uglify: {
       js: {
         files: {
-          'build/jquery.min.js': ['js/jquery.js'],
-          'build/bootstrap.min.js': ['js/bootstrap.js'],
-          'build/app.min.js': ['js/app.js'],
-          'build/knockout.min.js': ['js/knockout.min.js']
+          'temp/jquery.min.js': ['js/jquery.js'],
+          'temp/bootstrap.min.js': ['js/bootstrap.js'],
+          'temp/app.min.js': ['js/app.js'],
+          'temp/knockout.min.js': ['js/knockout.min.js']
         }
       }
     },
@@ -41,7 +41,7 @@ module.exports = function (grunt) {
         browsers: ['last 3 versions', '> 1%']
       },
       no_dest: {
-        src: 'build/style.min.css'
+        src: 'temp/style.min.css'
       }
     },
     uncss: {
@@ -50,7 +50,7 @@ module.exports = function (grunt) {
       },
       dist: {
         files: {
-          'build/combined.css': ['index.html']
+          'temp/combined.css': ['index.html']
         }
       }
     },
@@ -68,5 +68,5 @@ module.exports = function (grunt) {
 
   // Register default tasks
   grunt.registerTask('default', ['newer:uglify:js', 'newer:concat:js',
-                                 'newer:cssmin', 'newer:concat:css', 'clean' ]);
+                                 'newer:cssmin', 'newer:concat:css']);
 }
