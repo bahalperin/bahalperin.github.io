@@ -2,7 +2,7 @@
 
 body {
   color: black;
-  font-family: 'Raleway','sans-serif';
+  font-family: 'Open Sans','sans-serif';
 }
 
 footer {
@@ -16,7 +16,7 @@ h2,
 h3,
 h4,
 h5 {
-  font-family: 'Libre Baskerville';
+  font-family: 'Libre Baskerville', 'serif';
   padding: 0;
 }
 
@@ -150,6 +150,8 @@ hr.faded-moz {
 .project-description {
   padding: 10px;
   text-align: left;
+  line-height: 150%;
+  font-size: 15px;
 }
 
 .about-me {
@@ -264,7 +266,6 @@ br.small-screen {
     font-size: 22px;
   }
   .about-me {
-    font-size: 12px;
     text-align: center;
     text-indent: 0;
     padding-left: 0;
