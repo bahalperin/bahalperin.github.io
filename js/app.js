@@ -28,19 +28,6 @@ function appViewModel() {
 
     self.projects = [
         {
-            name: 'Duct Sizer',
-            url: '//duct-sizer.appspot.com',
-            github: '//github.com/bahalps/duct-sizer',
-            image: 'images/duct-sizer.png',
-            description: "This is a personal project I built to perform a calculation " +
-                "I regularly do at my job as an HVAC engineer.  This was my first ever web " +
-                "development project and I'm very proud of it!  It's been very rewarding " +
-                "to see most of the engineers in my office using it!  The site was built " +
-                "on Google App Engine with a Python back end.",
-            skills: ['coniunctione', 'cillum', 'se', 'nisi'],
-            date: 'September 2014'
-        },
-        {
             name: 'Arcade Game',
             url: '//bahalps.github.io/frontend-nanodegree-arcade-game',
             github: '//github.com/bahalps/frontend-nanodegree-arcade-game',
@@ -66,6 +53,19 @@ function appViewModel() {
             "the user can view recent pictures taken at each location.",
             skills: ['coniunctione', 'cillum', 'se', 'nisi'],
             date: 'November 2014'
+        },
+        {
+            name: 'Duct Sizer',
+            url: '//duct-sizer.appspot.com',
+            github: '//github.com/bahalps/duct-sizer',
+            image: 'images/duct-sizer.png',
+            description: "This is a personal project I built to perform a calculation " +
+            "I regularly do at my job as an HVAC engineer.  This was my first ever web " +
+            "development project and I'm very proud of it!  It's been very rewarding " +
+            "to see most of the engineers in my office using it!  The site was built " +
+            "on Google App Engine with a Python back end.",
+            skills: ['coniunctione', 'cillum', 'se', 'nisi'],
+            date: 'September 2014'
         },
         {
             name: 'Website Optimization',
